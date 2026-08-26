@@ -5,6 +5,7 @@ import landImage from "@/assets/land.jpg";
 import { company } from "@/data/company";
 import { categories } from "@/data/properties";
 import { useNavigate } from "react-router-dom";
+import directorImage from "@/assets/direktur.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -181,6 +182,67 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Leadership */}
+<section className="border-y border-border bg-card">
+  <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
+    <div className="grid items-center gap-14 md:grid-cols-12 md:gap-20">
+      <div className="md:col-span-5">
+        <div className="overflow-hidden">
+          <img
+            src={directorImage}
+            alt="Dodi Sugiarto Sipayung, Direktur PT. SIPAYUNG HOLDING GROUP"
+            width={1000}
+            height={1250}
+            loading="lazy"
+            className="aspect-[4/5] w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="md:col-span-6 md:col-start-7">
+        <p className="eyebrow text-muted-foreground">
+          Leadership
+        </p>
+
+        <h2 className="mt-6 font-serif text-3xl leading-tight sm:text-4xl lg:text-[2.8rem]">
+          Membangun dengan visi,
+          <span className="block italic">
+            tumbuh bersama.
+          </span>
+        </h2>
+
+        <p className="mt-8 text-sm leading-[1.9] text-muted-foreground sm:text-base">
+          PT. SIPAYUNG HOLDING GROUP dibangun dengan komitmen
+          untuk mengembangkan hospitality, properti, dan pariwisata
+          yang memberikan pengalaman berkualitas sekaligus menciptakan
+          nilai berkelanjutan bagi pelanggan, mitra, dan masyarakat.
+        </p>
+
+        <div className="mt-10 border-t border-border pt-6">
+          <p className="eyebrow text-muted-foreground">
+            Director
+          </p>
+
+          <p className="mt-3 font-serif text-2xl">
+            Dodi Sugiarto Sipayung
+          </p>
+
+          <p className="mt-2 text-sm text-muted-foreground">
+            PT. SIPAYUNG HOLDING GROUP
+          </p>
+        </div>
+
+        <a
+          href="/tentang"
+          className="link-underline mt-10 inline-flex items-center gap-2 text-sm tracking-[0.14em] uppercase"
+        >
+          Profil Perusahaan <ArrowRight className="size-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* About preview */}
       <section className="border-y border-border bg-card">

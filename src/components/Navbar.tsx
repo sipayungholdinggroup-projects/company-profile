@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { company } from "@/data/company";
+import logo from "../../public/favicon.svg";
 
 const links = [
   { to: "/", label: "Beranda" },
@@ -20,9 +21,7 @@ export default function Navbar() {
 
   // Halaman yang menggunakan navbar transparan di atas hero
   const overHero =
-    pathname === "/" ||
-    pathname === "/program" ||
-    pathname === "/tentang";
+    pathname === "/" || pathname === "/program" || pathname === "/tentang";
 
   const light = overHero && !scrolled;
 
@@ -58,20 +57,23 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 md:px-10">
         {/* Logo / Company Name */}
-        <Link
-          to="/"
-          className="font-serif text-base uppercase tracking-[0.16em] sm:text-lg"
-        >
-          {company.name}
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt={`${company.name} logo`}
+            className="h-9 w-auto object-contain"
+          />
+
+          <span className="font-serif text-base uppercase tracking-[0.16em] sm:text-lg">
+            {company.name}
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-10 md:flex">
           {links.map((link) => {
             const active =
-              link.to === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.to);
+              link.to === "/" ? pathname === "/" : pathname.startsWith(link.to);
 
             return (
               <Link
@@ -79,9 +81,7 @@ export default function Navbar() {
                 to={link.to}
                 className={cn(
                   "link-underline text-[0.8rem] uppercase tracking-[0.14em] transition-opacity",
-                  active
-                    ? "opacity-100"
-                    : "opacity-60 hover:opacity-100",
+                  active ? "opacity-100" : "opacity-60 hover:opacity-100",
                 )}
               >
                 {link.label}
@@ -98,11 +98,7 @@ export default function Navbar() {
           onClick={() => setOpen((value) => !value)}
           className="md:hidden"
         >
-          {open ? (
-            <X className="size-5" />
-          ) : (
-            <Menu className="size-5" />
-          )}
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
@@ -122,9 +118,7 @@ export default function Navbar() {
                   to={link.to}
                   className={cn(
                     "border-b border-border py-4 text-sm uppercase tracking-[0.14em] last:border-0",
-                    active
-                      ? "text-foreground"
-                      : "text-muted-foreground",
+                    active ? "text-foreground" : "text-muted-foreground",
                   )}
                 >
                   {link.label}
