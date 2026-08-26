@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { company } from "@/data/company";
-import logo from "../../public/favicon.svg";
+import logo from "@/assets/logo.svg";
 
 const links = [
   { to: "/", label: "Beranda" },
