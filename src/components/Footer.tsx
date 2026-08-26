@@ -38,7 +38,7 @@ export default function Footer() {
               {["homestay", "hotel", "kos"].map((slug) => (
                 <li key={slug}>
                   <a
-                    href={`/program#${slug}`}
+                    href={`/program/${slug}`}
                     className="capitalize opacity-85 transition-opacity hover:opacity-100"
                   >
                     {slug}
